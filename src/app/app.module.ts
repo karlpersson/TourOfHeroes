@@ -7,20 +7,25 @@ import { AppComponent } from './app.component';
 
 import {FormsModule} from '@angular/forms';
 
+import {HeroService} from './hero.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
-    HeroesComponent
+    HeroesComponent,
+    MessagesComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
