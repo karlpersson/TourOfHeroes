@@ -7,6 +7,10 @@ import {MessagesComponent} from './messages/messages.component';
 import {Hero} from './hero';
 import {HeroService} from './hero.service';
 import {MessageService} from './message.service';
+import {AppRoutingModule} from './app-routing.module';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import { APP_BASE_HREF } from '@angular/common';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,12 +18,14 @@ describe('AppComponent', () => {
         AppComponent,
         HeroesComponent,
         HeroDetailComponent,
-        MessagesComponent
+        MessagesComponent,
+        DashboardComponent
       ],
       imports: [
-        FormsModule
+        FormsModule,
+        AppRoutingModule
       ],
-      providers: [HeroService, MessageService]
+      providers: [HeroService, MessageService,  { provide: APP_BASE_HREF, useValue : '/' }]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
