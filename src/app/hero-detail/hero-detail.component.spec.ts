@@ -9,6 +9,7 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
 import {HeroService} from '../hero.service';
 import {MessageService} from '../message.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 describe('HeroDetailComponent', () => {
@@ -18,7 +19,7 @@ describe('HeroDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroDetailComponent,HeroesComponent,DashboardComponent ],
-      imports: [FormsModule,AppRoutingModule],
+      imports: [FormsModule,AppRoutingModule,HttpClientModule],
       providers: [HeroService,MessageService,{ provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
