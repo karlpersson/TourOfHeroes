@@ -10,6 +10,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import {HeroService} from '../hero.service';
 import {MessageService} from '../message.service';
 import { HttpClientModule } from '@angular/common/http';
+import {HeroSearchComponent} from '../hero-search/hero-search.component';
 
 
 describe('HeroDetailComponent', () => {
@@ -18,7 +19,7 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroDetailComponent,HeroesComponent,DashboardComponent ],
+      declarations: [ HeroDetailComponent,HeroesComponent,DashboardComponent, HeroSearchComponent ],
       imports: [FormsModule,AppRoutingModule,HttpClientModule],
       providers: [HeroService,MessageService,{ provide: APP_BASE_HREF, useValue : '/' }]
     })
